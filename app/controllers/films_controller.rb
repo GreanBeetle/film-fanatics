@@ -8,7 +8,6 @@ class FilmsController < ApplicationController
   def create
     @year = Year.find(params[:year_id])
     @film = @year.films.new(films_params)
-    binding.pry
     if @film.save
       redirect_to year_path(@film.year)
     else

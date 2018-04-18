@@ -1,10 +1,38 @@
+<br>
 <div class="card" style="margin:10px;border:1px solid black;width:800px;margin:0 auto;">
   <div class="card-header" style="text-align:center;">
     <h2>Add a new film for <%= @year.year %></h2>
   </div>
-  <div class="card-body" style="padding: 20px;">
-    <%= render "form" %>
+  <div class="card-body" style="padding: 20px; text-align: center;">
+
     <small style="margin: 0 auto;"><%= link_to "HOME", years_path %></small>
   </div>
 
+</div>
+<br>
+<div class="card"  style="margin:10px;border:1px solid black;width:800px;margin:0 auto; padding: 25px;">
+  <%= form_for :film, url: {action: "create"} do |f| %>
+    <div class="row">
+      <div class="col-md-2">
+        <h5>TITLE:</h5><br>
+        <h5>DIRECTOR:</h5><br>
+        <h5>RELEASE:</h5><br>
+        <h5>GENRE:</h5><br>
+        <h5>GROSS:</h5><br>
+      </div>
+      <div class="col-md-4">
+        <%= f.text_field :title %><br><br>
+        <%= f.text_field :director %><br><br>
+        <%= f.date_field :release_date %><br><br>
+        <%= f.text_field :genre %><br><br>
+        <%= f.text_field :opening_gross %><br><br>
+      </div>
+      <div class="col-md-8">
+        <!-- whitespace -->
+      </div>
+    </div>
+    <div class="card-footer" style="text-align: center;">
+      <%= f.submit  %>
+    </div>
+  <% end %>
 </div>
