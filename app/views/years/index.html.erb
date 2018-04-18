@@ -1,7 +1,9 @@
-<h1>Years</h1>
+<div class="jumbotron">
+  <h1 id="main">Top Films of the Aughts</h1>
+</div>
 
 <ul>
   <% @years.each do |y| %>
-    <li><%= link_to y.year, year_path(y) %></li>
+    <li id="years"><%= link_to y.year, year_path(y) %></li>
   <% end %>
 </ul>

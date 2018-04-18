@@ -1,5 +1,5 @@
 
-<%= form_for :film do |f| %>
+<%= form_for :film,  :url => url_for(:controller => FilmsController, :action => 'update') do |f| %>
   <div class="row">
     <div class="col-md-2">
       <h5>TITLE:</h5><br>

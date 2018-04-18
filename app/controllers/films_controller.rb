@@ -29,7 +29,8 @@ class FilmsController < ApplicationController
 
   def update
     @film = Film.find(params[:id])
-    if @film.update!(:films_params)
+    binding.pry
+    if @film.update!(films_params)
       redirect_to year_path(@film.year)
     else
       render :edit
