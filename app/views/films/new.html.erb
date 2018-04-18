@@ -24,7 +24,20 @@
         <%= f.text_field :title %><br><br>
         <%= f.text_field :director %><br><br>
         <%= f.date_field :release_date %><br><br>
-        <%= f.text_field :genre %><br><br>
+        <select name="Genre[genre]">
+          <option>Horror</option>
+          <option>Drama</option>
+          <option>Comedy</option>
+          <option>Erotica</option>
+          <option>Noir</option>
+          <option>Romance</option>
+          <option>Sci-Fi</option>
+          <option>Action</option>
+          <option>Fantasy</option>
+          <option>Foreign</option>
+          <option>Documentary</option>
+        </select>
+        <br><br>
         <%= f.text_field :opening_gross %><br><br>
       </div>
       <div class="col-md-8">

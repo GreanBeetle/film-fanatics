@@ -1,5 +1,5 @@
 
-<%= form_for :film,  :url => url_for(:controller => FilmsController, :action => 'update') do |f| %>
+<%= form_for :film do |f| %>
   <div class="row">
     <div class="col-md-2">
       <h5>TITLE:</h5><br>
@@ -12,7 +12,20 @@
       <%= f.text_field :title %><br><br>
       <%= f.text_field :director %><br><br>
       <%= f.date_field :release_date %><br><br>
-      <%= f.text_field :genre %><br><br>
+      <select name="Genre">
+        <option>Horror</option>
+        <option>Drama</option>
+        <option>Comedy</option>
+        <option>Erotica</option>
+        <option>Noir</option>
+        <option>Romance</option>
+        <option>Sci-Fi</option>
+        <option>Action</option>
+        <option>Fantasy</option>
+        <option>Foreign</option>
+        <option>Documentary</option>
+      </select>
+        <br><br>
       <%= f.text_field :opening_gross %><br><br>
     </div>
     <div class="col-md-8">
