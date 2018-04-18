@@ -6,22 +6,22 @@
   <ul>
     <% @year.films.each do |film| %>
       <li>
-        <%= film.title %> |
-        <%= film.director %> |
-        <%= film.release_date %> |
-        <%= film.genre %> |
-        $<%= film.opening_gross %> |
+        <%= link_to film.title, year_film_path(@year, film) %>
+        <br>
+        <!-- Here we're providing the films_controller.rb with two arguments. One for the year, one for the film.   -->
 
         <%= link_to "Edit", edit_year_film_path(@year, film) %> |
         <%= link_to "Delete", year_film_path(@year, film),
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>
       </li>
+      <br>
     <% end %>
   </ul>
 <% else %>
   <p>There are no films yet!</p>
 <% end %>
 
+<p><%= link_to "Add a film", new_year_film_path(@year) %></p>
 
 <p><%= link_to "Return to home", years_path %></p>
