@@ -1,0 +1,27 @@
+<h1><%= @year.year %></h1>
+
+<% if @year.films.any? %>
+  <h4>Here are the films for this year:</h4>
+
+  <ul>
+    <% @year.films.each do |film| %>
+      <li>
+        <%= film.title %> |
+        <%= film.director %> |
+        <%= film.release_date %> |
+        <%= film.genre %> |
+        $<%= film.opening_gross %> |
+
+        <%= link_to "Edit", edit_year_film_path(@year, film) %> |
+        <%= link_to "Delete", year_film_path(@year, film),
+                                 :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no films yet!</p>
+<% end %>
+
+
+<p><%= link_to "Return to home", years_path %></p>
