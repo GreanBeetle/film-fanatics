@@ -1,5 +1,21 @@
 class FilmsController < ApplicationController
 
+  def new
+    @year = Year.find(params[:year_id])
+    @film = Film.new
+  end
+
+  def create
+    @year = Year.find(params[:year_id])
+    @film = @year.films.new(films_params)
+    binding.pry
+    if @film.save
+      redirect_to year_path(@film.year)
+    else
+      render :new
+    end
+  end
+
   def show
     @year = Year.find(params[:year_id])
     @film = Film.find(params[:id])
@@ -14,7 +30,13 @@ class FilmsController < ApplicationController
 
   def update
     @film = Film.find(params[:id])
+    if @film.update!(:films_params)
+      redirect_to year_path(@film.year)
+    else
+      render :edit
+    end
   end
+
 
   private
     def films_params

@@ -1,10 +1,25 @@
 
-<%= form_for @film do |f| %>
-
-  <%= f.text_field :title %>
-  <%= f.text_field :director %>
-  <%= f.text_field :release_date %>
-  <%= f.text_field :genre %>
-  <%= f.text_field :opening_gross %>
-  <%= f.submit  %>
+<%= form_for :film do |f| %>
+  <div class="row">
+    <div class="col-md-2">
+      <h5>TITLE:</h5><br>
+      <h5>DIRECTOR:</h5><br>
+      <h5>RELEASE:</h5><br>
+      <h5>GENRE:</h5><br>
+      <h5>GROSS:</h5><br>
+    </div>
+    <div class="col-md-4">
+      <%= f.text_field :title %><br><br>
+      <%= f.text_field :director %><br><br>
+      <%= f.date_field :release_date %><br><br>
+      <%= f.text_field :genre %><br><br>
+      <%= f.text_field :opening_gross %><br><br>
+    </div>
+    <div class="col-md-8">
+      <!-- whitespace -->
+    </div>
+  </div>
+  <div class="row" style="text-align: center;">
+    <%= f.submit  %>
+  </div>
 <% end %>
