@@ -1,9 +1,7 @@
-<div class="jumbotron">
-  <h1 id="main">Top Films of the Aughts</h1>
+<div class="card">
+  <ul>
+    <% @years.each do |y| %>
+      <li id="years"><%= link_to y.year, year_path(y) %></li>
+    <% end %>
+  </ul>
 </div>
-
-<ul>
-  <% @years.each do |y| %>
-    <li id="years"><%= link_to y.year, year_path(y) %></li>
-  <% end %>
-</ul>

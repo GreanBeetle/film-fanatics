@@ -1,31 +1,21 @@
-<h1><%= @year.year %></h1>
-
-<% if @year.films.any? %>
-  <h4>Here are the films for this year:</h4>
-
-  <ul>
-    <% @year.films.each do |film| %>
-      <li>
-        <!-- Here we're providing the films_controller.rb with two arguments. One for the year, one for the film.   -->
-        <%= link_to film.title, year_film_path(@year, film) %>
-        <br>
-      </li>
-      <br>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no films yet!</p>
-<% end %>
-
-<p><%= link_to "ADD FILM", new_year_film_path(@year) %></p>
-
-<p><%= link_to "Return to home", years_path %></p>
-
-<div class="card" style="text-align:center;margin:10px;border:1px solid black;width:800px;margin:0 auto;">
-  <h1>Current Films</h1>
-  <% @alphabetized_films.each do |film| %>
+<div class="card">
+  <div class="card-header">
+    <h1><%= @year.year %> FILMS</h1>
+  </div>
+  <div class="card-body">
+    <% if @year.films.any? %>
+    <h4>Here are the films for this year:</h4>
+    <% @alphabetized_films.each do |film| %>
     <% if film.year_id == @year.id %>
-      <li><%= film.title %></li>
+    <li><%= link_to film.title, year_film_path(@year, film) %></li>
     <% end %>
-  <% end %>
+    <% end %>
+    <% else %>
+    <p>There are no films yet!</p>
+    <% end %>
+  </div>
+  <div class="card-footer">
+    <small><%= link_to "ADD FILM", new_year_film_path(@year) %></small> |
+    <small><%= link_to "HOME", years_path %></small>
+  </div>
 </div>

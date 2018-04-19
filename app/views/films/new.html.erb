@@ -1,5 +1,5 @@
 <br>
-<div class="card" style="margin:10px;border:1px solid black;width:800px;margin:0 auto;">
+<div class="card">
   <div class="card-header" style="text-align:center;">
     <h2>Add a new film for <%= @year.year %></h2>
   </div>
@@ -10,7 +10,7 @@
 
 </div>
 <br>
-<div class="card"  style="margin:10px;border:1px solid black;width:800px;margin:0 auto; padding: 25px;">
+<div class="card">
   <%= form_for :film, url: {action: "create"} do |f| %>
     <div class="row">
       <div class="col-md-2">

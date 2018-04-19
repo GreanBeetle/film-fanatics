@@ -1,0 +1,53 @@
+/*"bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+* {
+  font-family: 'Gaegu', cursive;
+}
+
+.jumbotron {
+  margin: 25px;
+  text-align: center;
+  background-image: url('https://radioromaniacultural.ro/wp-content/uploads/2017/09/303980-film-700_orig.jpg');
+  h1 {
+    color: #F8F8F8;
+    font-family: 'Shrikhand', cursive;
+  }
+}
+
+.card-header {
+  background-color: #D75427;
+}
+
+.card {
+  border: none;
+  opacity: .83;
+  width:800px;
+  margin:0 auto;
+  padding: 25px;
+  background-color: #D0BA66;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 1.5em
+}
+
+#years {
+  font-size: 2em;
+}
+
+#years:hover {
+  cursor: pointer;
+  font-size: 4em;
+}
+
+body {
+  background-image: url('https://images.unsplash.com/photo-1510419580815-f9e6b26cf0f2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5ece749c92d162cf7d22874d453ab7e0&auto=format&fit=crop&w=1350&q=80');
+  background-position: 50% 50%;
+  background-size: contain;
+  // background-position: 10px;
+}

@@ -10,7 +10,12 @@
   </head>
 
   <body>
-    <%= flash[:notice] %>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="jumbotron">
+        <h1>Films of the Aughts</h1>
+      </div>
+      <%= yield %>
+      <%= flash[:notice] %>
+    </div>
   </body>
 </html>
