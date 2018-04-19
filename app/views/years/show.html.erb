@@ -20,3 +20,12 @@
 <p><%= link_to "ADD FILM", new_year_film_path(@year) %></p>
 
 <p><%= link_to "Return to home", years_path %></p>
+
+<div class="card" style="text-align:center;margin:10px;border:1px solid black;width:800px;margin:0 auto;">
+  <h1>Current Films</h1>
+  <% @alphabetized_films.each do |film| %>
+    <% if film.year_id == @year.id %>
+      <li><%= film.title %></li>
+    <% end %>
+  <% end %>
+</div>
