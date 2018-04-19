@@ -29,14 +29,20 @@ class FilmsController < ApplicationController
 
   def update
     @film = Film.find(params[:id])
-    binding.pry
     if @film.update!(films_params)
+      flash[:notice] = "#{@film.title} has been updated."
       redirect_to year_path(@film.year)
     else
       render :edit
     end
   end
 
+  def destroy
+    @film = Film.find(params[:id])
+    @film.destroy
+    flash[:notice] = "#{@film.title} has been deleted."
+    redirect_to year_path(@film.year)
+  end
 
   private
     def films_params
