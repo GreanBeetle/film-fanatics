@@ -23,7 +23,7 @@
 .card-footer {
   text-align: center;
   background: none;
-  border-top: none; 
+  border-top: none;
 }
 
 h2 {
@@ -65,9 +65,18 @@ li {
   font-size: 4em;
 }
 
+input {
+  width: 250px;
+  text-align: center; 
+}
+
 body {
   background-image: url('https://images.unsplash.com/photo-1510419580815-f9e6b26cf0f2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5ece749c92d162cf7d22874d453ab7e0&auto=format&fit=crop&w=1350&q=80');
   background-position: 50% 50%;
   background-size: contain;
   // background-position: 10px;
+}
+
+#add-film {
+  text-align: center;
 }

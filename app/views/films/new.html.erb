@@ -10,44 +10,32 @@
 
 </div>
 <br>
-<div class="card">
+<div class="card" id="add-film">
   <%= form_for :film, url: {action: "create"} do |f| %>
-    <div class="row">
-      <div class="col-md-2">
-        <h5>TITLE:</h5><br>
-        <h5>DIRECTOR:</h5><br>
-        <h5>RELEASE:</h5><br>
-        <h5>GENRE:</h5><br>
-        <h5>GROSS:</h5><br>
-        <h5>SUMMARY:</h5><br>
-      </div>
-      <div class="col-md-4">
-        <%= f.text_field :title %><br><br>
-        <%= f.text_field :director %><br><br>
-        <%= f.date_field :release_date %><br><br>
-        <select name="Genre[genre]">
-          <option>Horror</option>
-          <option>Drama</option>
-          <option>Comedy</option>
-          <option>Erotica</option>
-          <option>Noir</option>
-          <option>Romance</option>
-          <option>Sci-Fi</option>
-          <option>Action</option>
-          <option>Fantasy</option>
-          <option>Foreign</option>
-          <option>Documentary</option>
-        </select>
-        <br><br>
-        <%= f.text_field :opening_gross %><br><br>
-        <%= f.text_field :summary %><br><br>
-      </div>
-      <div class="col-md-8">
-        <!-- whitespace -->
-      </div>
-    </div>
-    <div class="card-footer" style="text-align: center;">
-      <%= f.submit  %>
-    </div>
+    <%= f.text_field :title, placeholder: "TITLE" %><br><br>
+    <%= f.text_field :director, placeholder: "DIRECTOR" %><br><br>
+    <%= f.date_field :release_date, placeholder: "RELEASE" %><br><br>
+    <%= f.text_field :opening_gross, placeholder: "GROSS" %><br><br>
+
+    <%= f.text_field :summary, placeholder: "SUMMARY", maxlength: 500 %><br><br>
+    <select name="Genre[genre]">
+      <option>Choose Genre</option>
+      <option>Horror</option>
+      <option>Drama</option>
+      <option>Comedy</option>
+      <option>Erotica</option>
+      <option>Noir</option>
+      <option>Romance</option>
+      <option>Sci-Fi</option>
+      <option>Action</option>
+      <option>Fantasy</option>
+      <option>Foreign</option>
+      <option>Documentary</option>
+    </select>
+
+  </div>
+  <div class="card-footer" style="text-align: center;">
+    <%= f.submit  %>
+  </div>
   <% end %>
 </div>
