@@ -31,4 +31,6 @@ ActiveRecord::Schema.define(version: 20180419182341) do
     t.integer "year"
   end
 
+  
+
 end
