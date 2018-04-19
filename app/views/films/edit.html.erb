@@ -5,5 +5,42 @@
 <h2><%= @film.title %></h2>
 
 <div class="card"  style="margin:10px;border:1px solid black;width:800px;margin:0 auto; padding: 25px;">
-  <%= render "form" %>
+  <!-- HERE WE SPECIFY THE HTTP METHOD, THEN HANDPICK THE CONTROLLER ACTION, e.g. "update" -->
+  <%= form_for :film, method: :patch, :url => {:action => "update"}  do |f| %>
+    <div class="row">
+      <div class="col-md-2">
+        <h5>TITLE:</h5><br>
+        <h5>DIRECTOR:</h5><br>
+        <h5>RELEASE:</h5><br>
+        <h5>GENRE:</h5><br>
+        <h5>GROSS:</h5><br>
+      </div>
+      <div class="col-md-4">
+        <%= f.text_field :title %><br><br>
+        <%= f.text_field :director %><br><br>
+        <%= f.date_field :release_date %><br><br>
+        <select name="Genre">
+          <option>Horror</option>
+          <option>Drama</option>
+          <option>Comedy</option>
+          <option>Erotica</option>
+          <option>Noir</option>
+          <option>Romance</option>
+          <option>Sci-Fi</option>
+          <option>Action</option>
+          <option>Fantasy</option>
+          <option>Foreign</option>
+          <option>Documentary</option>
+        </select>
+          <br><br>
+        <%= f.text_field :opening_gross %><br><br>
+      </div>
+      <div class="col-md-8">
+        <!-- whitespace -->
+      </div>
+    </div>
+    <div class="row" style="text-align: center;">
+      <%= f.submit  %>
+    </div>
+  <% end %>
 </div>
