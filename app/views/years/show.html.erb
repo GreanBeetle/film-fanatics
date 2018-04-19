@@ -4,18 +4,19 @@
   </div>
   <div class="card-body">
     <% if @year.films.any? %>
-    <h4>Here are the films for this year:</h4>
-    <% @alphabetized_films.each do |film| %>
-    <% if film.year_id == @year.id %>
-    <li><%= link_to film.title, year_film_path(@year, film) %></li>
-    <% end %>
-    <% end %>
-    <% else %>
-    <p>There are no films yet!</p>
+      <% @alphabetized_films.each do |film| %>
+        <% if film.year_id == @year.id %>
+          <ul>
+            <li id="film-list"><%= link_to film.title, year_film_path(@year, film) %></li>
+          </ul>
+        <% end %>
+      <% end %>
+      <% else %>
+        <p>There are no films yet!</p>
     <% end %>
   </div>
   <div class="card-footer">
-    <small><%= link_to "ADD FILM", new_year_film_path(@year) %></small> |
-    <small><%= link_to "HOME", years_path %></small>
+    <%= link_to "ADD FILM", new_year_film_path(@year) %> |
+    <%= link_to "HOME", years_path %>
   </div>
 </div>

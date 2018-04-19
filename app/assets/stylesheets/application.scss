@@ -17,6 +17,22 @@
 
 .card-header {
   background-color: #D75427;
+  text-align: center;
+}
+
+.card-footer {
+  text-align: center;
+  background: none;
+  border-top: none; 
+}
+
+h2 {
+  size: 32pt;
+}
+
+#film-list, ul {
+  list-style: none;
+  color: #80232B;
 }
 
 .card {
@@ -28,12 +44,16 @@
   background-color: #D0BA66;
 }
 
-ul {
-  list-style: none;
+a {
+  color: #80232B;
+  &:hover {
+    color: #80232B;
+  }
 }
 
 li {
-  font-size: 1.5em
+  font-size: 1.5em;
+  color: #80232B;
 }
 
 #years {

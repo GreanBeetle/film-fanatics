@@ -7,10 +7,13 @@
     <h4>RELEASE DATE: <%= @film.release_date %> </h4>
     <h4>GENRE: <%= @film.genre %> </h4>
     <h4>OPENING: $<%= @film.opening_gross %> </h4><br>
-    <small><%= link_to "EDIT", edit_year_film_path(@film.year_id, @film) %></small> |
-    <small><%= link_to "DELETE", year_film_path(@film.year_id, @film),
-                             :data => {:confirm => "Are you sure?",
-                                            :method => "delete"} %></small>
+    <div class="card-footer">
+      <%= link_to "EDIT", edit_year_film_path(@film.year_id, @film) %> |
+      <%= link_to "DELETE", year_film_path(@film.year_id, @film),
+      :data => {:confirm => "Are you sure?",
+        :method => "delete"} %> |
+      <%= link_to "HOME", years_path %>
+
+    </div>
   </div>
-  <p><%= link_to "Return to home", years_path %></p>
 </div>

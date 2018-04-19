@@ -14,9 +14,9 @@
           <h5>GROSS:</h5><br>
         </div>
         <div class="col-md-4">
-          <%= f.text_field :title %><br><br>
+          <%= f.text_field :title %><br><br><br>
           <%= f.text_field :director %><br><br>
-          <%= f.date_field :release_date %><br><br>
+          <%= f.date_field :release_date %><br><br><br>
           <select name="Genre">
             <option>Horror</option>
             <option>Drama</option>
@@ -30,16 +30,19 @@
             <option>Foreign</option>
             <option>Documentary</option>
           </select>
-            <br><br>
+            <br><br><br>
           <%= f.text_field :opening_gross %><br><br>
         </div>
         <div class="col-md-8">
           <!-- whitespace -->
         </div>
       </div>
-      <div class="row" style="text-align: center;">
-        <%= f.submit  %>
-      </div>
-    <% end %>
   </div> <!-- CARD BODY -->
+  <div class="card-footer">
+    <%= f.submit  %>
+    <br>
+    <hr>
+    <%= link_to "HOME", years_path %>
+  </div>
+    <% end %>
 </div> <!-- CARD -->
